@@ -1,13 +1,14 @@
 import 'package:dio/dio.dart';
+import 'package:sbi_demo/core/network/token_storage.dart';
 
 class AuthInterceptor extends Interceptor {
-  final Future<String?> Function() getToken;
+  AuthInterceptor(this._tokenStorage);
 
-  AuthInterceptor(this.getToken);
+  final TokenStorage _tokenStorage;
 
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) async {
-    final token = await getToken();
+    final token = await _tokenStorage.getAccessToken();
     if (token != null && token.isNotEmpty) {
       options.headers['Authorization'] = 'Bearer $token';
     }

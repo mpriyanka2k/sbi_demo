@@ -3,6 +3,9 @@ import 'package:sbi_demo/core/constant/app_strings.dart';
 import 'package:sbi_demo/core/network/interceptors/auth_interceptor.dart';
 import 'package:sbi_demo/core/network/interceptors/header_interceptor.dart';
 import 'package:sbi_demo/core/network/interceptors/log_interceptor.dart';
+import 'package:sbi_demo/core/network/interceptors/refresh_token_interceptor.dart';
+import 'package:sbi_demo/core/network/token_refresh_service.dart';
+import 'package:sbi_demo/core/network/token_storage.dart';
 import '../../core/network/network_info.dart';
 import 'api_response.dart';
 
@@ -12,10 +15,16 @@ class ApiService {
   final Dio _dio;
   final NetworkInfo networkInfo;
 
-  ApiService(this._dio, this.networkInfo){
+  ApiService(
+    this._dio,
+    this.networkInfo,
+    TokenStorage tokenStorage,
+    TokenRefreshService tokenRefreshService,
+  ) {
     _dio.interceptors.add(AppLogInterceptor());
-    _dio.interceptors.add(AuthInterceptor(getToken));
     _dio.interceptors.add(HeaderInterceptor());
+    _dio.interceptors.add(AuthInterceptor(tokenStorage));
+    _dio.interceptors.add(RefreshTokenInterceptor(_dio, tokenRefreshService, tokenStorage));
   }
 
   Future<ApiResponse<dynamic>> request(
@@ -25,7 +34,7 @@ class ApiService {
     dynamic data,
   }) async {
 
-    // 1️⃣ Check internet before API call
+    // 1 Check internet before API call
     if (!await networkInfo.isConnected) {
       return ApiError(AppStrings.noInternet);
     }
@@ -86,8 +95,5 @@ class ApiService {
     }
   }
 
-  Future<String?> getToken() async {
-    return await "hdujsk";
-  }
 }
 
