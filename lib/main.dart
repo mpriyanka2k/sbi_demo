@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import 'package:sbi_demo/core/constant/app_strings.dart';
 import 'package:sbi_demo/core/network/network_info.dart' show NetworkInfo;
 import 'package:sbi_demo/core/router/app_router.dart';
 import 'package:sbi_demo/core/theme/app_theme.dart';
+import 'package:sbi_demo/core/theme/theme_notifier.dart';
+
 
 void main() {
-  runApp(const MyApp());
+  // runApp(const MyApp());
+    runApp(
+    ChangeNotifierProvider(
+      create: (_) => ThemeNotifier(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -15,6 +24,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
     return ScreenUtilInit(
       designSize: const Size(360, 690),
       minTextAdapt: true,
@@ -22,7 +32,10 @@ class MyApp extends StatelessWidget {
       builder: (context,child) {
         return MaterialApp.router(
           title: AppStrings.appName,
-          theme: AppTheme.darkTheme,
+          // theme: AppTheme.darkTheme,
+           theme: ThemeData.light(),
+           darkTheme: ThemeData.dark(),
+           themeMode: themeNotifier.themeMode,
            routerConfig: AppRouter.router,
         );
       }
