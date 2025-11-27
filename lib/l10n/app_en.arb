@@ -1,0 +1,19 @@
+{
+  "@@locale": "en",
+  "appTitle": "SBI Demo",
+  "flavorTestTitle": "Flavor Test",
+  "currentFlavorLabel": "Current Flavor",
+  "flavorDetailsTitle": "Flavor Details",
+  "flavorNameLabel": "Flavor Name",
+  "displayNameLabel": "Display Name",
+  "baseUrlLabel": "Base URL",
+  "environmentDescription": "You are currently running the {flavorName} flavor.",
+  "@environmentDescription": {
+    "placeholders": {
+      "flavorName": {
+        "type": "String"
+      }
+    }
+  }
+}
+

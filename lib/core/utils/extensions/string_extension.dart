@@ -4,15 +4,16 @@ extension StringExtensions on String {
 
   /// Capitalize first letter: "hello" → "Hello"
   String capitalize() {
-    if (this.isEmpty) return this;
-    return this[0].toUpperCase() + substring(1);
+    if (isEmpty) return this;
+    final first = substring(0, 1).toUpperCase();
+    return '$first${substring(1)}';
   }
 
   /// Capitalize every word: "hello world" → "Hello World"
   String capitalizeWords() {
     return split(" ")
         .map((word) =>
-            word.isEmpty ? word : word[0].toUpperCase() + word.substring(1))
+            word.isEmpty ? word : '${word.substring(0, 1).toUpperCase()}${word.substring(1)}')
         .join(" ");
   }
 
@@ -66,7 +67,7 @@ extension StringExtensions on String {
   /// Limit string with "..."
   String limit(int maxLength) {
     if (length <= maxLength) return this;
-    return substring(0, maxLength) + "...";
+    return '${substring(0, maxLength)}...';
   }
 
 }

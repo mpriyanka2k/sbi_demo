@@ -1,15 +1,16 @@
 extension DateTimeExtensions on DateTime {
   /// Format: dd-MM-yyyy
   String toFormattedDate() {
-    return "${this.day.toString().padLeft(2, '0')}-"
-           "${this.month.toString().padLeft(2, '0')}-"
-           "${this.year}";
+    final dayStr = day.toString().padLeft(2, '0');
+    final monthStr = month.toString().padLeft(2, '0');
+    return "$dayStr-$monthStr-$year";
   }
 
   /// Format: HH:mm (24-hour)
   String toFormattedTime() {
-    return "${this.hour.toString().padLeft(2, '0')}:"
-           "${this.minute.toString().padLeft(2, '0')}";
+    final hourStr = hour.toString().padLeft(2, '0');
+    final minuteStr = minute.toString().padLeft(2, '0');
+    return "$hourStr:$minuteStr";
   }
 
   /// Returns true if the date is today
@@ -30,15 +31,13 @@ extension DateTimeExtensions on DateTime {
   DateTime get onlyDate => DateTime(year, month, day);
 
   /// Add days more easily
-  DateTime addDays(int days) => this.add(Duration(days: days));
+  DateTime addDays(int days) => add(Duration(days: days));
 
   /// Subtract days
-  DateTime subtractDays(int days) => this.subtract(Duration(days: days));
+  DateTime subtractDays(int days) => subtract(Duration(days: days));
 
   /// Difference in days
-  int differenceInDays(DateTime other) {
-    return this.difference(other).inDays;
-  }
+  int differenceInDays(DateTime other) => difference(other).inDays;
 
   /// Convert to "x min ago", "y hrs ago"
   String timeAgo() {
