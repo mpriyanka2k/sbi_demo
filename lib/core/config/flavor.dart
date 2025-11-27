@@ -57,8 +57,8 @@ class FlavorConfig {
         return Flavor.dev;
       case 'staging':
         return Flavor.staging;
-      case 'prod':
-      case 'production':
+      // case 'prod':
+      // case 'production':
       default:
         return Flavor.prod;
     }
