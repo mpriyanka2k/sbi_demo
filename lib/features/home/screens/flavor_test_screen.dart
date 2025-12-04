@@ -29,6 +29,7 @@ class FlavorTestScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        if(true) Text('dfgg'),
                         Row(
                           children: [
                             Container(
