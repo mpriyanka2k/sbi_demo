@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sbi_demo/core/config/flavor.dart';
+import 'package:sbi_demo/core/utils/localization/change_locale.dart';
 import 'package:sbi_demo/l10n/app_localizations.dart';
 
-class FlavorTestScreen extends StatelessWidget {
+class FlavorTestScreen extends ConsumerWidget {
   const FlavorTestScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final config = FlavorConfig.instance;
     final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context);
@@ -97,6 +99,13 @@ class FlavorTestScreen extends StatelessWidget {
                     ),
                   ],
                 ),
+                ElevatedButton(
+                  onPressed: () {
+                    ref.read(localeProvider.notifier).toggleLocale();
+                  },
+                  child: Text('Change Language'),
+                )
+
               ],
             ),
           ),
