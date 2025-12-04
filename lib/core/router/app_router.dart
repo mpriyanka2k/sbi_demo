@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sbi_demo/features/home/screens/flavor_test_screen.dart';
+import '../../features/home_screen/flavor_test_screen.dart';
 
 class AppRouter {
   static final GoRouter router = GoRouter(
@@ -9,7 +9,7 @@ class AppRouter {
     routes: [
       GoRoute(
         path: '/',
-        name: 'home',
+        name: 'home_screen',
         builder: (context, state) => const FlavorTestScreen(),
       ),
     ],

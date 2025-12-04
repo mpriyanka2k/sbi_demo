@@ -105,7 +105,6 @@ class FlavorTestScreen extends ConsumerWidget {
                   },
                   child: Text('Change Language'),
                 )
-
               ],
             ),
           ),
