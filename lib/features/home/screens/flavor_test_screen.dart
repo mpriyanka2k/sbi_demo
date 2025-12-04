@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sbi_demo/core/config/flavor.dart';
+import 'package:sbi_demo/l10n/app_localizations.dart';
 
 class FlavorTestScreen extends StatelessWidget {
   const FlavorTestScreen({super.key});
@@ -8,90 +9,97 @@ class FlavorTestScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final config = FlavorConfig.instance;
     final theme = Theme.of(context);
+    final l10n = AppLocalizations.of(context);
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Flavor Test'),
+        title: Text(l10n.flavorTestTitle),
       ),
       body: SafeArea(
-        child: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-
-              Card(
-                color: config.accentColor.withValues(alpha: 0.1),
-                child: Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.all(12),
-                            decoration: BoxDecoration(
-                              color: config.accentColor,
-                              shape: BoxShape.circle,
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(24),
+          child: Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Card(
+                  color: config.accentColor.withValues(alpha: 0.1),
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        if(true) Text('dfgg'),
+                        Row(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(12),
+                              decoration: BoxDecoration(
+                                color: config.accentColor,
+                                shape: BoxShape.circle,
+                              ),
+                              child: Icon(
+                                _getIcon(config.flavor),
+                                color: Colors.white,
+                                size: 24,
+                              ),
                             ),
-                            child: Icon(
-                              _getIcon(config.flavor),
-                              color: Colors.white,
-                              size: 24,
-                            ),
-                          ),
-                          const SizedBox(width: 16),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Current Flavor',
-                                  style: theme.textTheme.bodySmall?.copyWith(
-                                    color: theme.colorScheme.onSurface.withValues(alpha: 0.6),
+                            const SizedBox(width: 16),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    l10n.currentFlavorLabel,
+                                    style: theme.textTheme.bodySmall?.copyWith(
+                                      color: theme.colorScheme.onSurface.withValues(alpha: 0.6),
+                                    ),
                                   ),
-                                ),
-                                const SizedBox(height: 4),
-                                Text(
-                                  config.displayName,
-                                  style: theme.textTheme.titleLarge?.copyWith(
-                                    color: config.accentColor,
-                                    fontWeight: FontWeight.bold,
+                                  const SizedBox(height: 4),
+                                  Text(
+                                    config.displayName,
+                                    style: theme.textTheme.titleLarge?.copyWith(
+                                      color: config.accentColor,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
-                                ),
-                              ],
+                                  const SizedBox(height: 8),
+                                  Text(
+                                    l10n.environmentDescription(config.displayName),
+                                    style: theme.textTheme.bodyMedium,
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(height: 24),
-
-              _InfoCard(
-                title: 'Flavor Details',
-                items: [
-                  _InfoItem(
-                    label: 'Flavor Name',
-                    value: config.name,
-                    icon: Icons.label,
-                  ),
-                  _InfoItem(
-                    label: 'Display Name',
-                    value: config.displayName,
-                    icon: Icons.badge,
-                  ),
-                  _InfoItem(
-                    label: 'Base URL',
-                    value: config.baseUrl,
-                    icon: Icons.link,
-                  ),
-                ],
-              ),
-              const SizedBox(height: 24),
-            ],
+                const SizedBox(height: 24),
+                _InfoCard(
+                  title: l10n.flavorDetailsTitle,
+                  items: [
+                    _InfoItem(
+                      label: l10n.flavorNameLabel,
+                      value: config.name,
+                      icon: Icons.label,
+                    ),
+                    _InfoItem(
+                      label: l10n.displayNameLabel,
+                      value: config.displayName,
+                      icon: Icons.badge,
+                    ),
+                    _InfoItem(
+                      label: l10n.baseUrlLabel,
+                      value: config.baseUrl,
+                      icon: Icons.link,
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -151,13 +159,11 @@ class _InfoItem extends StatelessWidget {
   final String label;
   final String value;
   final IconData icon;
-  final Color? color;
 
   const _InfoItem({
     required this.label,
     required this.value,
     required this.icon,
-    this.color,
   });
 
   @override
@@ -169,7 +175,7 @@ class _InfoItem extends StatelessWidget {
         Icon(
           icon,
           size: 20,
-          color: color ?? theme.colorScheme.primary,
+          color: theme.colorScheme.primary,
         ),
         const SizedBox(width: 12),
         Expanded(
@@ -187,7 +193,6 @@ class _InfoItem extends StatelessWidget {
                 value,
                 style: theme.textTheme.bodyMedium?.copyWith(
                   fontWeight: FontWeight.w500,
-                  color: color,
                 ),
               ),
             ],

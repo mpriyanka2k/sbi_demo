@@ -1,0 +1,19 @@
+{
+  "@@locale": "hi",
+  "appTitle": "एसबीआई डेमो",
+  "flavorTestTitle": "फ्लेवर्स परीक्षण",
+  "currentFlavorLabel": "वर्तमान फ्लेवर",
+  "flavorDetailsTitle": "फ्लेवर विवरण",
+  "flavorNameLabel": "फ्लेवर नाम",
+  "displayNameLabel": "प्रदर्शित नाम",
+  "baseUrlLabel": "बेस यूआरएल",
+  "environmentDescription": "आप वर्तमान में {flavorName} फ्लेवर चला रहे हैं।",
+  "@environmentDescription": {
+    "placeholders": {
+      "flavorName": {
+        "type": "String"
+      }
+    }
+  }
+}
+
