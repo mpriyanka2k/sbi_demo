@@ -8,7 +8,7 @@ import 'package:flutter/foundation.dart'
 ///
 /// Example:
 /// ```dart
-/// import 'firebase_options.dart';
+/// import 'firebase_options_staging.dart';
 /// // ...
 /// await Firebase.initializeApp(
 ///   options: DefaultFirebaseOptions.currentPlatform,
@@ -41,49 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDuLvdo10P2-Si-EONm9tT3RtR7gtVIEPY',
-    appId: '1:476101419378:web:f1518c1615243d5d093deb',
-    messagingSenderId: '476101419378',
-    projectId: 'sbi-demo-pro',
-    authDomain: 'sbi-demo-pro.firebaseapp.com',
-    storageBucket: 'sbi-demo-pro.firebasestorage.app',
-    measurementId: 'G-4JG42EPY33',
+    apiKey: 'AIzaSyAuZwUvf--3JH3W5eYY5YNYHI_JBHi2Lx0',
+    appId: '1:331313846384:web:cfa58681f2beab1c1efcb5',
+    messagingSenderId: '331313846384',
+    projectId: 'sbi-demo-staging',
+    authDomain: 'sbi-demo-staging.firebaseapp.com',
+    storageBucket: 'sbi-demo-staging.firebasestorage.app',
+    measurementId: 'G-2S2PEW1VCV',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAkP6AQrjGbanw2h1PwLS6PS34BtJP20J4',
-    appId: '1:476101419378:android:d16faa0e1da2d5fa093deb',
-    messagingSenderId: '476101419378',
-    projectId: 'sbi-demo-pro',
-    storageBucket: 'sbi-demo-pro.firebasestorage.app',
+    apiKey: 'AIzaSyCnuAsD0xKUljbN8tJRYAf6IGGzSV7Z-dU',
+    appId: '1:331313846384:android:8fec905e8054967c1efcb5',
+    messagingSenderId: '331313846384',
+    projectId: 'sbi-demo-staging',
+    storageBucket: 'sbi-demo-staging.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAHbHrPlBEEavaXXk88s_DYxfyfutxzWYk',
-    appId: '1:476101419378:ios:20db467a215617d5093deb',
-    messagingSenderId: '476101419378',
-    projectId: 'sbi-demo-pro',
-    storageBucket: 'sbi-demo-pro.firebasestorage.app',
-    iosBundleId: 'com.example.sbiDemo',
+    apiKey: 'AIzaSyB4deTQcyRY02ctkFRn2aamCx2x6Uh89zg',
+    appId: '1:331313846384:ios:2ddd90f51d5bf7d71efcb5',
+    messagingSenderId: '331313846384',
+    projectId: 'sbi-demo-staging',
+    storageBucket: 'sbi-demo-staging.firebasestorage.app',
+    iosBundleId: 'com.example.sbiDemo.staging',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyAHbHrPlBEEavaXXk88s_DYxfyfutxzWYk',
-    appId: '1:476101419378:ios:20db467a215617d5093deb',
-    messagingSenderId: '476101419378',
-    projectId: 'sbi-demo-pro',
-    storageBucket: 'sbi-demo-pro.firebasestorage.app',
+    apiKey: 'AIzaSyB4deTQcyRY02ctkFRn2aamCx2x6Uh89zg',
+    appId: '1:331313846384:ios:f4c6b84ed6e0d5a61efcb5',
+    messagingSenderId: '331313846384',
+    projectId: 'sbi-demo-staging',
+    storageBucket: 'sbi-demo-staging.firebasestorage.app',
     iosBundleId: 'com.example.sbiDemo',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyDuLvdo10P2-Si-EONm9tT3RtR7gtVIEPY',
-    appId: '1:476101419378:web:d837d7d91e97b5b6093deb',
-    messagingSenderId: '476101419378',
-    projectId: 'sbi-demo-pro',
-    authDomain: 'sbi-demo-pro.firebaseapp.com',
-    storageBucket: 'sbi-demo-pro.firebasestorage.app',
-    measurementId: 'G-YVJHJSTELT',
+    apiKey: 'AIzaSyAuZwUvf--3JH3W5eYY5YNYHI_JBHi2Lx0',
+    appId: '1:331313846384:web:46fa375d47a9a9291efcb5',
+    messagingSenderId: '331313846384',
+    projectId: 'sbi-demo-staging',
+    authDomain: 'sbi-demo-staging.firebaseapp.com',
+    storageBucket: 'sbi-demo-staging.firebasestorage.app',
+    measurementId: 'G-915Q1XWJ0G',
   );
 
 }

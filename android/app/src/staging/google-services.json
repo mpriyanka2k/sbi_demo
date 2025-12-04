@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "331313846384",
+    "project_id": "sbi-demo-staging",
+    "storage_bucket": "sbi-demo-staging.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:331313846384:android:813dfb42239c2f381efcb5",
+        "android_client_info": {
+          "package_name": "com.example.sbi_demo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnuAsD0xKUljbN8tJRYAf6IGGzSV7Z-dU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:331313846384:android:8fec905e8054967c1efcb5",
+        "android_client_info": {
+          "package_name": "com.example.sbi_demo.staging"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnuAsD0xKUljbN8tJRYAf6IGGzSV7Z-dU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

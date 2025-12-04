@@ -34,13 +34,13 @@ android {
         getByName("debug") {
             isDebuggable = true
             isMinifyEnabled = false
-            isShrinkResources = false   // ✅ Important fix
+            isShrinkResources = false
         }
 
         getByName("release") {
             signingConfig = signingConfigs.getByName("debug")
             isMinifyEnabled = false
-            isShrinkResources = false   // ✅ Critical fix for your error
+            isShrinkResources = false
         }
     }
 
@@ -65,6 +65,19 @@ android {
             dimension = "environment"
             resValue("string", "app_name", "SBI Demo")
             manifestPlaceholders["appLabel"] = "SBI Demo"
+        }
+    }
+
+    // REQUIRED FOR FIREBASE + FLAVORS
+    sourceSets {
+        getByName("dev") {
+            res.srcDirs("src/dev/res")
+        }
+        getByName("staging") {
+            res.srcDirs("src/staging/res")
+        }
+        getByName("prod") {
+            res.srcDirs("src/prod/res")
         }
     }
 }

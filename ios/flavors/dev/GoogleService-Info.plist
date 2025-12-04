@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyAHbHrPlBEEavaXXk88s_DYxfyfutxzWYk</string>
+	<string>AIzaSyDhxyHdpP0i3xJFBdtZWBS5giy2eNXmnSU</string>
 	<key>GCM_SENDER_ID</key>
-	<string>476101419378</string>
+	<string>1057047847304</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.sbiDemo</string>
+	<string>com.example.sbiDemo.dev</string>
 	<key>PROJECT_ID</key>
-	<string>sbi-demo-pro</string>
+	<string>sbi-demo-dev</string>
 	<key>STORAGE_BUCKET</key>
-	<string>sbi-demo-pro.firebasestorage.app</string>
+	<string>sbi-demo-dev.firebasestorage.app</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:476101419378:ios:20db467a215617d5093deb</string>
+	<string>1:1057047847304:ios:8143ce456d189c07d89a3d</string>
 </dict>
 </plist>
