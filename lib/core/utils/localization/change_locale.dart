@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/legacy.dart';
 
 class LocaleNotifier extends StateNotifier<Locale> {
-  LocaleNotifier() : super(const Locale('en')); // default English
+  LocaleNotifier() : super(const Locale('en'));
 
   void setLocale(Locale locale) {
     state = locale;
