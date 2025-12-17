@@ -20,6 +20,7 @@ class GradientInfoCardRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 75,
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         gradient: LinearGradient(

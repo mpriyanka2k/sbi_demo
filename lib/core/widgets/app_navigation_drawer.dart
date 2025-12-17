@@ -32,7 +32,7 @@ class AppNavigationDrawer extends StatelessWidget {
             height: 120,
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: Colors.blue.shade100,
+              color: Colors.blue.shade50,
               borderRadius: const BorderRadius.only(
                 bottomLeft: Radius.circular(20),
                 bottomRight: Radius.circular(20),
@@ -60,9 +60,7 @@ class AppNavigationDrawer extends StatelessWidget {
                     const SizedBox(height: 6),
                     Text(
                       userEmail,
-                      style: theme.textTheme.bodySmall?.copyWith(
-                        color: Colors.black,
-                      ),
+                      style: TextStyle(fontSize: 16)
                     ),
                   ],
                 ),

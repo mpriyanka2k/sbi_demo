@@ -18,7 +18,7 @@ class RecentlyViewedCourseCardList extends StatelessWidget {
     ];
 
     return SizedBox(
-      height: 212,
+      height: 200,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: courses.length,

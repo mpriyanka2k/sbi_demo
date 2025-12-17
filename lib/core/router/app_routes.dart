@@ -10,6 +10,9 @@ class AppRoutes {
   // Dashboard
   static const String dashboard = '/dashboard';
 
+  //SiteHome
+  static const String siteHome = '/siteHome';
+
   // Courses
   static const String courses = '/courses';
   static const String courseDetail = '/courseDetail';

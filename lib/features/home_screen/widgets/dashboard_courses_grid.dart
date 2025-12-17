@@ -38,7 +38,7 @@ class DashboardCoursesGrid extends StatelessWidget {
         crossAxisCount: 2,
         mainAxisSpacing: AppSpacing.md,
         crossAxisSpacing: AppSpacing.md,
-        childAspectRatio: 0.63,
+        childAspectRatio: 0.66,
       ),
       itemBuilder: (context, index) {
         final course = courses[index];

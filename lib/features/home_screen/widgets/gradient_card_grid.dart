@@ -52,7 +52,7 @@ class GradientCardGrid extends StatelessWidget {
         crossAxisCount: 2,
         mainAxisSpacing: 16,
         crossAxisSpacing: 16,
-        childAspectRatio: 2.3,
+        childAspectRatio: 2.6,
       ),
       itemCount: cardsData.length,
       itemBuilder: (context, index) {
