@@ -3,6 +3,7 @@ plugins {
     // START: FlutterFire Configuration
     id("com.google.gms.google-services")
     // END: FlutterFire Configuration
+    id("com.google.firebase.crashlytics")
     id("kotlin-android")
     id("dev.flutter.flutter-gradle-plugin")
 }
@@ -15,6 +16,10 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 
     kotlin {
@@ -53,6 +58,8 @@ android {
             versionNameSuffix = "-dev"
             resValue("string", "app_name", "SBI Demo Dev")
             manifestPlaceholders["appLabel"] = "SBI Demo Dev"
+
+            buildConfigField("boolean", "CRASHLYTICS_ENABLED", "false")
         }
         create("staging") {
             dimension = "environment"
@@ -60,11 +67,15 @@ android {
             versionNameSuffix = "-stg"
             resValue("string", "app_name", "SBI Demo Staging")
             manifestPlaceholders["appLabel"] = "SBI Demo Staging"
+
+            buildConfigField("boolean", "CRASHLYTICS_ENABLED", "true")
         }
         create("prod") {
             dimension = "environment"
             resValue("string", "app_name", "SBI Demo")
             manifestPlaceholders["appLabel"] = "SBI Demo"
+
+            buildConfigField("boolean", "CRASHLYTICS_ENABLED", "true")
         }
     }
 

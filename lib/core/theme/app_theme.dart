@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sbi_demo/core/theme/app_colors.dart';
-
+import 'package:sbi_demo/core/constant/app_colors.dart';
 
 class AppTheme {
   // -------------------------
@@ -35,7 +34,7 @@ class AppTheme {
 
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
-      fillColor: AppColors.grayLight,
+      fillColor: AppColors.grey100,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
         borderSide: BorderSide(color: AppColors.border),
@@ -74,13 +73,13 @@ class AppTheme {
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
     brightness: Brightness.dark,
-    primaryColor: AppColors.primaryLight,
+    primaryColor: AppColors.primary,
     scaffoldBackgroundColor: Colors.black,
     fontFamily: 'Roboto',
 
     colorScheme: ColorScheme.dark(
-      primary: AppColors.primaryLight,
-      secondary: AppColors.secondaryLight,
+      primary: AppColors.primary,
+      secondary: AppColors.primary,
       surface: const Color(0xFF121212),
       error: AppColors.error,
     ),
@@ -103,17 +102,17 @@ class AppTheme {
       fillColor: const Color(0xFF1E1E1E),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
-        borderSide: BorderSide(color: AppColors.grayDark),
+        borderSide: BorderSide(color: AppColors.grey400),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
-        borderSide: BorderSide(color: AppColors.primaryLight, width: 2),
+        borderSide: BorderSide(color: AppColors.primary, width: 2),
       ),
     ),
 
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.primaryLight,
+        backgroundColor: AppColors.primary,
         foregroundColor: Colors.black,
         textStyle: const TextStyle(
           fontWeight: FontWeight.bold,

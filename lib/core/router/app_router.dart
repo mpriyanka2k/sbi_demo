@@ -1,16 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../../features/home_screen/flavor_test_screen.dart';
+import 'package:sbi_demo/features/course_detail/course_detail.dart';
+import 'package:sbi_demo/features/courses/courses.dart';
+import '../../features/home_screen/home_screen.dart';
+import 'app_routes.dart';
 
 class AppRouter {
   static final GoRouter router = GoRouter(
-    initialLocation: '/',
+    initialLocation: AppRoutes.dashboard,
 
     routes: [
       GoRoute(
-        path: '/',
-        name: 'home_screen',
-        builder: (context, state) => const FlavorTestScreen(),
+        path: AppRoutes.dashboard,
+        name: 'dashboard',
+        builder: (context, state) => Dashboard(),
+      ),
+      GoRoute(
+        path: AppRoutes.courses,
+        name: 'courses',
+        builder: (context, state) => CoursesScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.courseDetail,
+        name: 'courseDetail',
+        builder: (context, state) => CourseDetailScreen(),
       ),
     ],
 

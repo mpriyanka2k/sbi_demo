@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sbi_demo/core/config/flavor.dart';
 import 'package:sbi_demo/core/router/app_router.dart';
 import 'package:sbi_demo/core/theme/app_theme.dart';
 import 'package:sbi_demo/core/utils/localization/change_locale.dart';
@@ -12,17 +12,16 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final flavorConfig = FlavorConfig.instance;
     final locale = ref.watch(localeProvider);
-    final theme = AppTheme.darkTheme.copyWith(
-      colorScheme: AppTheme.darkTheme.colorScheme.copyWith(
-        primary: flavorConfig.accentColor,
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarIconBrightness: Brightness.dark,
       ),
     );
-
     return MaterialApp.router(
       onGenerateTitle: (context) => AppLocalizations.of(context).appTitle,
-      theme: theme,
+      theme: AppTheme.lightTheme,
+      debugShowCheckedModeBanner: false,
       routerConfig: AppRouter.router,
       locale: locale,
       localizationsDelegates: const [

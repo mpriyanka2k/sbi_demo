@@ -31,4 +31,13 @@ class AppStrings {
   // Validation
   static const String fieldRequired = "This field is required";
   static const String invalidEmail = "Please enter a valid email address";
+
+  //Courses
+  static const String coursesHeader = 'SIF - Common Derivatives (Series - XIII): Mock Tests';
+  static const String courseName = 'SIF - Common Derivatives';
+  static const String coursesHeaderDescription = "These mock tests will help to clear NISM Series XIII : Common Derivatives Certification Examination.";
+
+  //Mock Test Card
+  static const String noOfQuestions = "No. of questions:";
+  static const String noOfAttempts = "No. of attempts:";
 }
