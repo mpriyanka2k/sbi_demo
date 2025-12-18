@@ -148,6 +148,8 @@ class AppColors {
   // Gradient Colors
   static const Color gColor1 = Color(0xFFE9D0FF);
   static const Color gColor2 = Color(0xFFDCEBFF);
+  static const Color gColor3 = Color(0xFFEEFDD0);
+  static const Color gColor4 = Color(0xFFDCF0FA);
 
   static const LinearGradient primaryGradient = LinearGradient(
     colors: [primary, primaryLight],

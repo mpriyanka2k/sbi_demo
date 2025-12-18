@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sbi_demo/core/constant/app_spacers.dart';
 
 class Placeholder extends StatelessWidget {
   const Placeholder({super.key});
@@ -12,7 +13,7 @@ class Placeholder extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Icon(Icons.image_outlined, size: 40, color: Colors.grey),
-            SizedBox(height: 8),
+            AppSpacers.vSm8,
             Text(
               'Image unavailable',
               style: TextStyle(fontSize: 12, color: Colors.grey),

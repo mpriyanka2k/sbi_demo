@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sbi_demo/core/constant/app_colors.dart';
+import 'package:sbi_demo/core/constant/app_spacers.dart';
 import 'package:sbi_demo/core/constant/app_spacings.dart';
 import 'package:sbi_demo/core/router/app_routes.dart';
 import 'package:sbi_demo/core/widgets/app_bar.dart';
@@ -96,9 +97,7 @@ class _CoursesScreenState extends State<CoursesScreen> with SingleTickerProvider
                 ),
               ),
             ),
-
-            const SizedBox(height: AppSpacing.md),
-
+            AppSpacers.vMd12,
             Expanded(
               child: TabBarView(
                 children: [

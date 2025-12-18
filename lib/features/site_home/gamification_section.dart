@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sbi_demo/core/constant/app_spacers.dart';
 
 class GamificationSection extends StatelessWidget {
   const GamificationSection({super.key});
@@ -21,18 +22,18 @@ class GamificationSection extends StatelessWidget {
             'Gamification',
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 8),
+          AppSpacers.vSm8,
           const Text(
             'Interactive modules to discover and learn new concepts in fun and interactive way.',
           ),
-          const SizedBox(height: 16),
+          AppSpacers.vLg16,
           ...items.map(
                 (e) => Padding(
               padding: const EdgeInsets.only(bottom: 12),
               child: Row(
                 children: [
                   const CircleAvatar(radius: 16, backgroundColor: Colors.white),
-                  const SizedBox(width: 12),
+                  AppSpacers.hMd12,
                   Text(e),
                 ],
               ),

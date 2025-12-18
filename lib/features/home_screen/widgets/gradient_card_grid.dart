@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../core/constant/app_colors.dart';
 import 'gradient_info_card.dart';
 
 class GradientCardGrid extends StatelessWidget {
@@ -11,9 +12,9 @@ class GradientCardGrid extends StatelessWidget {
         'icon': Icons.account_balance,
         'title': '08',
         'subtitle': 'Total No. of \nCourses Enrolled',
-        'gradient': const [
-          Color(0xFFE9D0FF),
-          Color(0xFFDCEBFF),
+        'gradient':  [
+          AppColors.gColor1,
+          AppColors.gColor2,
         ],
       },
       {
@@ -21,8 +22,8 @@ class GradientCardGrid extends StatelessWidget {
         'title': '10',
         'subtitle': 'Mandatory \nCourses Remaining',
         'gradient': const [
-          Color(0xFFE9D0FF),
-          Color(0xFFDCEBFF),
+          AppColors.gColor1,
+          AppColors.gColor2,
         ],
       },
       {
@@ -30,8 +31,8 @@ class GradientCardGrid extends StatelessWidget {
         'title': '15',
         'subtitle': 'Courses \nRemaining',
         'gradient': const [
-          Color(0xFFEEFDD0),
-          Color(0xFFDCF0FA),
+          AppColors.gColor3,
+          AppColors.gColor4,
         ],
       },
       {
@@ -39,8 +40,8 @@ class GradientCardGrid extends StatelessWidget {
         'title': '20',
         'subtitle': 'Learning Plans',
         'gradient': const [
-          Color(0xFFEEFDD0),
-          Color(0xFFDCF0FA),
+          AppColors.gColor3,
+          AppColors.gColor4,
         ],
       },
     ];

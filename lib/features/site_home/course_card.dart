@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sbi_demo/core/constant/app_spacers.dart';
+import '../../core/constant/app_insets.dart';
 
 class CourseCard extends StatelessWidget {
   const CourseCard({super.key});
@@ -19,7 +21,7 @@ class CourseCard extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8),
+            padding:  AppInsets.allSm,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
@@ -27,9 +29,9 @@ class CourseCard extends StatelessWidget {
                   'Currency Derivatives\n(Series-I): Mock Tests',
                   style: TextStyle(fontWeight: FontWeight.w600),
                 ),
-                SizedBox(height: 8),
+                AppSpacers.vSm8,
                 Text('4h 0 min'),
-                SizedBox(height: 8),
+                AppSpacers.vSm8,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -37,9 +39,9 @@ class CourseCard extends StatelessWidget {
                     Row(
                       children: [
                         Icon(Icons.star, size: 14),
-                        SizedBox(width: 4),
+                        AppSpacers.hXs4,
                         Text('0'),
-                        SizedBox(width: 8),
+                        AppSpacers.hSm8,
                         Icon(Icons.favorite_border, size: 14),
                       ],
                     )

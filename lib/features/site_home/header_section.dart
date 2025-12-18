@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sbi_demo/core/constant/app_insets.dart';
+import 'package:sbi_demo/core/constant/app_spacers.dart';
 
 class HeaderSection extends StatelessWidget {
   const HeaderSection({super.key});
@@ -6,7 +8,7 @@ class HeaderSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16),
+      padding: AppInsets.allLg,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
@@ -14,7 +16,7 @@ class HeaderSection extends StatelessWidget {
             'Discover your Perfect Course in Our Training Platform',
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
-          SizedBox(height: 12),
+          AppSpacers.vMd12,
           Text(
             'SIF - Common Derivatives',
             style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),

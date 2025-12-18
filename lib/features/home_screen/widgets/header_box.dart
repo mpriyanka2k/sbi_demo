@@ -15,7 +15,7 @@ class RoundedImageCard extends StatelessWidget {
       child: Image.asset(
         imagePath,
         fit: BoxFit.cover,
-        errorBuilder: (_, __, ___) => const Placeholder(),
+        errorBuilder: (_, _, _) => const Placeholder(),
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sbi_demo/core/constant/app_colors.dart';
 
 class GradientInfoCardRow extends StatelessWidget {
   final IconData icon;
@@ -12,8 +13,8 @@ class GradientInfoCardRow extends StatelessWidget {
     required this.count,
     required this.subtitle,
     this.gradientColors = const [
-      Color(0xFFE9D0FF),
-      Color(0xFFDCEBFF),
+      AppColors.gColor1,
+      AppColors.gColor2,
     ],
   });
 

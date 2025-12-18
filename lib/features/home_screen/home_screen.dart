@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sbi_demo/core/config/flavor.dart';
+import 'package:sbi_demo/core/constant/app_spacers.dart';
 import 'package:sbi_demo/core/constant/app_textStyles.dart';
 import 'package:sbi_demo/core/utils/localization/change_locale.dart';
 import 'package:sbi_demo/core/widgets/app_bar.dart';
@@ -54,11 +55,11 @@ class Dashboard extends ConsumerWidget {
                 RoundedImageCard(
                   imagePath: 'assets/images/dashboard_logo.png',
                 ),
-                SizedBox(height: 16,),
+                AppSpacers.vLg16,
                 GradientCardGrid(),
-                SizedBox(height: 16,),
+                AppSpacers.vLg16,
                 GradientInfoCardRow(icon: Icons.badge_outlined, count: '05', subtitle: 'Badges Earned',),
-                SizedBox(height: 16,),
+                AppSpacers.vLg16,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -66,9 +67,9 @@ class Dashboard extends ConsumerWidget {
                     Text('View All', style: AppTextStyles.viewAllButtonStyle,)
                   ],
                 ),
-                SizedBox(height: 16,),
+                AppSpacers.vLg16,
                 DashboardCoursesGrid(),
-                SizedBox(height: 16,),
+                AppSpacers.vLg16,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -76,7 +77,7 @@ class Dashboard extends ConsumerWidget {
                     ArrowControlRow(),
                   ],
                 ),
-                SizedBox(height: 16,),
+                AppSpacers.vLg16,
                 RecentlyViewedCourseCardList()
               ],
             ),

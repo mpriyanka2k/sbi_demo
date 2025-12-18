@@ -19,7 +19,7 @@ class CourseGrid extends StatelessWidget {
           crossAxisSpacing: 12,
           childAspectRatio: 0.72,
         ),
-        itemBuilder: (_, __) => const CourseCard(),
+        itemBuilder: (_, _) => const CourseCard(),
       ),
     );
   }

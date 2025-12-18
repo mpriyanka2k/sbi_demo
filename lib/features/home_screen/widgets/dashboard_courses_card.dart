@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:progress_indicator/progress_indicator.dart';
+import 'package:sbi_demo/core/constant/app_spacers.dart';
 import 'package:sbi_demo/core/constant/app_spacings.dart';
 import 'package:sbi_demo/core/constant/app_textStyles.dart';
 import 'package:sbi_demo/core/widgets/asset_image_with_placeholder.dart';
@@ -43,13 +44,13 @@ class DashboardCoursesCard extends StatelessWidget {
                     fontSize: 14
                   ),
                 ),
-                const SizedBox(height: AppSpacing.sm),
+                AppSpacers.vSm8,
 
                 Text(duration),
-                const SizedBox(height: AppSpacing.xs),
+                AppSpacers.vXs4,
 
                 Text(progress),
-                const SizedBox(height: AppSpacing.sm),
+                AppSpacers.vSm8,
 
                 BarProgress(
                   percentage: 90.0,
@@ -59,7 +60,7 @@ class DashboardCoursesCard extends StatelessWidget {
                   stroke: 4,
                   round: true,
                 ),
-                const SizedBox(height: AppSpacing.sm),
+                AppSpacers.vSm8,
 
                 Center(child: ElevatedButton(onPressed: (){}, child: Text('Complete Now', style: AppTextStyles.bodyMedium,)))
               ],

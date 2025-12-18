@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sbi_demo/core/constant/app_colors.dart';
+import 'package:sbi_demo/core/constant/app_spacers.dart';
 import 'package:sbi_demo/core/constant/app_textStyles.dart';
 
 class GradientInfoCard extends StatelessWidget {
@@ -47,8 +48,7 @@ class GradientInfoCard extends StatelessWidget {
               size: 30,
             ),
           ),
-
-          const SizedBox(width: 8),
+        AppSpacers.hSm8,
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
