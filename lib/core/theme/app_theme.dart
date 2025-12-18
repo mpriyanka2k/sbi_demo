@@ -1,134 +1,74 @@
 import 'package:flutter/material.dart';
-import 'package:sbi_demo/core/constant/app_colors.dart';
+import 'package:sbi_demo/core/theme/app_theme_extension.dart' as AppColors;
 
 class AppTheme {
-  // -------------------------
-  // LIGHT THEME
-  // -------------------------
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
     brightness: Brightness.light,
-    primaryColor: AppColors.primary,
-    scaffoldBackgroundColor: AppColors.scaffoldBackground,
-    fontFamily: 'Roboto',
-
     colorScheme: ColorScheme.light(
-      primary: AppColors.primary,
-      secondary: AppColors.secondary,
-      surface: Colors.white,
-      error: AppColors.error,
+      primary: AppColors.light.primary,
+      primaryContainer: AppColors.light.primaryVariant,
+      secondary: AppColors.light.secondary,
+      background: AppColors.light.background,
+      surface: AppColors.light.surface,
+      error: AppColors.light.error,
     ),
 
-    textTheme: const TextTheme(
-      titleLarge: TextStyle(
-        fontSize: 22,
-        fontWeight: FontWeight.bold,
-      ),
-      bodyMedium: TextStyle(
-        fontSize: 14,
-      ),
-      bodySmall: TextStyle(
-        fontSize: 12,
-      ),
+    scaffoldBackgroundColor: AppColors.light.background,
+    cardColor: AppColors.light.card,
+
+    appBarTheme: AppBarTheme(
+      backgroundColor: AppColors.light.background,
+      foregroundColor: AppColors.light.textPrimary,
     ),
 
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
-      fillColor: AppColors.grey100,
+      fillColor: AppColors.light.card,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
-        borderSide: BorderSide(color: AppColors.border),
+        borderSide: BorderSide(color: AppColors.light.card),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
-        borderSide: BorderSide(color: AppColors.primary, width: 2),
+        borderSide: BorderSide(color: AppColors.light.card, width: 2),
       ),
     ),
-
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.primary,
-        foregroundColor: Colors.white,
-        textStyle: const TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 16,
-        ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-      ),
-    ),
-
-    appBarTheme: const AppBarTheme(
-      elevation: 0,
-      centerTitle: true,
-      backgroundColor: Colors.transparent,
-      foregroundColor: AppColors.textPrimary,
-    ),
+    extensions: [AppColors.light],
   );
 
-  // -------------------------
-  // DARK THEME
-  // -------------------------
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
     brightness: Brightness.dark,
-    primaryColor: AppColors.primary,
-    scaffoldBackgroundColor: Colors.black,
-    fontFamily: 'Roboto',
 
     colorScheme: ColorScheme.dark(
-      primary: AppColors.primary,
-      secondary: AppColors.primary,
-      surface: const Color(0xFF121212),
-      error: AppColors.error,
+      primary: AppColors.dark.primary,
+      primaryContainer: AppColors.dark.primaryVariant,
+      secondary: AppColors.dark.secondary,
+      background: AppColors.dark.background,
+      surface: AppColors.dark.surface,
+      error: AppColors.dark.error,
     ),
 
-    textTheme: const TextTheme(
-      titleLarge: TextStyle(
-        fontSize: 22,
-        fontWeight: FontWeight.bold,
-      ),
-      bodyMedium: TextStyle(
-        fontSize: 14,
-      ),
-      bodySmall: TextStyle(
-        fontSize: 12,
-      ),
-    ),
+    scaffoldBackgroundColor: AppColors.dark.background,
+    cardColor: AppColors.dark.card,
 
+    appBarTheme: AppBarTheme(
+      backgroundColor: AppColors.dark.background,
+      foregroundColor: AppColors.dark.textPrimary,
+    ),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
-      fillColor: const Color(0xFF1E1E1E),
+      fillColor: AppColors.dark.card,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
-        borderSide: BorderSide(color: AppColors.grey400),
+        borderSide: BorderSide(color: AppColors.dark.card),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
-        borderSide: BorderSide(color: AppColors.primary, width: 2),
+        borderSide: BorderSide(color: AppColors.dark.card, width: 2),
       ),
     ),
-
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.primary,
-        foregroundColor: Colors.black,
-        textStyle: const TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 16,
-        ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-      ),
-    ),
-
-    appBarTheme: const AppBarTheme(
-      elevation: 0,
-      centerTitle: true,
-      backgroundColor: Colors.transparent,
-      foregroundColor: Colors.white,
-    ),
+    extensions: [AppColors.dark],
   );
 }
