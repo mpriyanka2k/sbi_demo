@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sbi_demo/core/constant/app_spacers.dart';
 import 'package:sbi_demo/core/constant/app_spacings.dart';
 import 'package:sbi_demo/core/widgets/asset_image_with_placeholder.dart';
 
@@ -48,7 +49,7 @@ class CourseCard extends StatelessWidget {
                     const Spacer(),
                     const Icon(Icons.star, size: 16),
                     Text('$rating'),
-                    const SizedBox(width: 8),
+                    AppSpacers.hSm8,
                     const Icon(Icons.favorite_border, size: 16),
                   ],
                 ),
@@ -61,7 +62,7 @@ class CourseCard extends StatelessWidget {
                       'Enroll',
                       style: TextStyle(fontWeight: FontWeight.w600),
                     ),
-                    SizedBox(width: 4),
+                    AppSpacers.hXs4,
                     Icon(Icons.arrow_right_alt_outlined, size: 20),
                   ],
                 ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:sbi_demo/core/constant/app_decoration.dart';
 import 'package:sbi_demo/core/constant/app_spacers.dart';
 import 'package:sbi_demo/core/constant/app_strings.dart';
+import 'package:sbi_demo/core/constant/app_textStyles.dart';
 
 class MockTestCard extends StatelessWidget {
   final String title;
@@ -27,24 +29,14 @@ class MockTestCard extends StatelessWidget {
         Container(
           width: double.infinity,
           padding: const EdgeInsets.all(16),
-          decoration: BoxDecoration(
-            color: backgroundColor,
-            borderRadius: BorderRadius.circular(16),
-            border: Border.all(
-              color: Colors.grey
-            )
-          ),
+          decoration: AppDecorations.borderedContainer(backgroundColor),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 title,
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              AppSpacers.vLg,
+                style: AppTextStyles.headingSmall,),
+              AppSpacers.vLg16,
               Text('${AppStrings.noOfQuestions} $questions'),
               const SizedBox(height: 4),
               Text('${AppStrings.noOfAttempts} $attempts'),

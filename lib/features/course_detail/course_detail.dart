@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sbi_demo/core/constant/app_colors.dart';
+import 'package:sbi_demo/core/constant/app_decoration.dart';
 import 'package:sbi_demo/core/constant/app_spacers.dart';
 import 'package:sbi_demo/core/constant/app_strings.dart';
 import 'package:sbi_demo/core/constant/app_textStyles.dart';
@@ -34,9 +35,9 @@ class CourseDetailScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(AppStrings.coursesHeader, style: AppTextStyles.headingMedium),
-                  AppSpacers.vLg,
+                  AppSpacers.vLg16,
                   Text(AppStrings.coursesHeaderDescription, style: AppTextStyles.bodyMedium,),
-                  AppSpacers.vLg,
+                  AppSpacers.vLg16,
                   Container(
                     padding: EdgeInsets.all(8),
                     decoration: BoxDecoration(
@@ -52,29 +53,26 @@ class CourseDetailScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  AppSpacers.vLg,
+                  AppSpacers.vLg16,
                   CustomElevatedButton(text: 'Continue', onPressed: () {  },backgroundColor: AppColors.buttonGrey, isFullWidth: false,)
                 ],
               ),
             ),
-            AppSpacers.vLg,
+            AppSpacers.vLg16,
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Container(
                 height: 60,
                 width: double.infinity,
                 padding: const EdgeInsets.symmetric(horizontal: 16),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: Colors.grey),
-                ),
+                decoration: AppDecorations.borderedContainer(AppColors.grey),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     const Text(
                       'Note',
-                      style: TextStyle(fontSize: 16),
+                      style: AppTextStyles.bodyLarge,
                     ),
                     GestureDetector(
                       onTap: () {},

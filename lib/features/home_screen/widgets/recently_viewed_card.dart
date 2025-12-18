@@ -50,17 +50,16 @@ class RecentlyViewedCourseCard extends StatelessWidget {
                           fontSize: 14
                       ),
                     ),
-                    const SizedBox(height: AppSpacing.sm),
-
+                    AppSpacers.vSm8,
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Row(
                           children: [
                             Text(duration),
-                            AppSpacers.hXs,
+                            AppSpacers.hXs4,
                             Icon(Icons.favorite, size: 18,color: AppColors.textDisabled,),
-                            AppSpacers.hXs,
+                            AppSpacers.hXs4,
                             RatingBadge(rating: 4.5),
                           ],
                         ),
