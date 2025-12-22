@@ -1,16 +1,17 @@
 import 'package:dio/dio.dart';
+import 'package:sbi_demo/core/flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:sbi_demo/core/network/network_constants.dart';
-import 'package:sbi_demo/core/network/token_storage.dart';
 
 class TokenRefreshService {
-  TokenRefreshService(this._dio, this._tokenStorage, {this.refreshEndpoint = defaultRefreshPath});
+  TokenRefreshService(this._dio,this._flutterSecureStorages,{this.refreshEndpoint = defaultRefreshPath});
 
   final Dio _dio;
-  final TokenStorage _tokenStorage;
+  final FlutterSecureStorages _flutterSecureStorages;
   final String refreshEndpoint;
 
+
   Future<String?> refresh() async {
-    final refreshToken = await _tokenStorage.getRefreshToken();
+    final refreshToken = await _flutterSecureStorages.getRefreshToken();
     if (refreshToken == null || refreshToken.isEmpty) {
       return null;
     }
@@ -36,7 +37,7 @@ class TokenRefreshService {
       return null;
     }
 
-    await _tokenStorage.saveTokens(
+    await _flutterSecureStorages.saveTokens(
       accessToken: newAccessToken,
       refreshToken: newRefreshToken,
     );

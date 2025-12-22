@@ -1,14 +1,15 @@
 import 'package:dio/dio.dart';
-import 'package:sbi_demo/core/network/token_storage.dart';
+import 'package:sbi_demo/core/flutter_secure_storage/flutter_secure_storage.dart';
+
 
 class AuthInterceptor extends Interceptor {
-  AuthInterceptor(this._tokenStorage);
+  AuthInterceptor(this._flutterSecureStorages);
 
-  final TokenStorage _tokenStorage;
+  final FlutterSecureStorages _flutterSecureStorages;
 
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) async {
-    final token = await _tokenStorage.getAccessToken();
+    final token = await _flutterSecureStorages.getAccessToken();
     if (token != null && token.isNotEmpty) {
       options.headers['Authorization'] = 'Bearer $token';
     }

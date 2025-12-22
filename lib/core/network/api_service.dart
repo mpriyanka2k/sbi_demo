@@ -1,11 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:sbi_demo/core/constant/app_strings.dart';
-import 'package:sbi_demo/core/network/interceptors/auth_interceptor.dart';
-import 'package:sbi_demo/core/network/interceptors/header_interceptor.dart';
-import 'package:sbi_demo/core/network/interceptors/log_interceptor.dart';
-import 'package:sbi_demo/core/network/interceptors/refresh_token_interceptor.dart';
+import 'package:sbi_demo/core/flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:sbi_demo/core/network/token_refresh_service.dart';
-import 'package:sbi_demo/core/network/token_storage.dart';
 import '../../core/network/network_info.dart';
 import 'api_response.dart';
 
@@ -14,17 +10,21 @@ enum HttpMethod { get, post, put, delete }
 class ApiService {
   final Dio _dio;
   final NetworkInfo networkInfo;
+  final FlutterSecureStorages flutterSecureStorages;
+  final TokenRefreshService tokenRefreshService;
 
   ApiService(
     this._dio,
     this.networkInfo,
-    TokenStorage tokenStorage,
-    TokenRefreshService tokenRefreshService,
+    this.flutterSecureStorages,
+    this.tokenRefreshService,
   ) {
-    _dio.interceptors.add(AppLogInterceptor());
-    _dio.interceptors.add(HeaderInterceptor());
-    _dio.interceptors.add(AuthInterceptor(tokenStorage));
-    _dio.interceptors.add(RefreshTokenInterceptor(_dio, tokenRefreshService, tokenStorage));
+
+    // _dio.interceptors.add(AppLogInterceptor());
+    // _dio.interceptors.add(HeaderInterceptor());
+    // _dio.interceptors.add(AuthInterceptor(flutterSecureStorages));
+    // _dio.interceptors.add(RefreshTokenInterceptor(_dio, tokenRefreshService, flutterSecureStorages,locator<ApiService>()));
+  
   }
 
   Future<ApiResponse<dynamic>> request(
@@ -58,6 +58,12 @@ class ApiService {
           response = await _dio.delete(endpoint,
               data: data, queryParameters: queryParams);
           break;
+
+
+        // case HttpMethod.fetch:
+        //   response = await _dio.fetch(requestOptions);
+        //   break;
+
       }
 
       // Handle response status codes:

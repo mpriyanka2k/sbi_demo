@@ -1,18 +1,22 @@
 import 'package:dio/dio.dart';
+import 'package:sbi_demo/core/flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:sbi_demo/core/network/api_service.dart';
 import 'package:sbi_demo/core/network/network_constants.dart';
 import 'package:sbi_demo/core/network/token_refresh_service.dart';
-import 'package:sbi_demo/core/network/token_storage.dart';
+
 
 class RefreshTokenInterceptor extends Interceptor {
   RefreshTokenInterceptor(
     this._dio,
     this._tokenRefreshService,
-    this._tokenStorage,
+    this._flutterSecureStorages,
+    this.apiService
   );
 
   final Dio _dio;
   final TokenRefreshService _tokenRefreshService;
-  final TokenStorage _tokenStorage;
+  final FlutterSecureStorages _flutterSecureStorages;
+  final ApiService apiService;
 
   Future<String?>? _refreshFuture;
 
@@ -32,9 +36,10 @@ class RefreshTokenInterceptor extends Interceptor {
 
       final requestOptions = _updatedRequest(err.requestOptions, token);
       final response = await _dio.fetch(requestOptions);
-      handler.resolve(response);
+      // final response = await apiService.request("refresh_token",method: HttpMethod.fetch);
+     // handler.resolve(response);
     } catch (_) {
-      await _tokenStorage.clearTokens();
+      await _flutterSecureStorages.clearTokens();
       handler.next(err);
     }
   }
